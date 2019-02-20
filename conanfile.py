@@ -14,7 +14,7 @@ class JmespathCppConan(ConanFile):
     description = "C++ implementation of JMESPath, a query language for JSON"
     topics = ("<Put some tag here>", "<here>", "<and here>")
     settings = "os", "compiler", "build_type", "arch"
-    generators = "cmake_paths"
+    generators = ("cmake", "cmake_paths")
     default_options = "boost:header_only=True"
 
     exports_sources = ["CMakeLists.txt"]
@@ -38,8 +38,7 @@ class JmespathCppConan(ConanFile):
             os.rename("conan_paths.cmake", os.path.join(self._build_subfolder, "conan_paths.cmake"))
         cmake = CMake(self)
         cmake.definitions["JMESPATH_BUILD_TESTS"] = False
-        cmake.configure(source_folder=self._source_subfolder,
-                        build_folder=self._build_subfolder)
+        cmake.configure(build_folder=self._build_subfolder)
         return cmake
 
     def build(self):
