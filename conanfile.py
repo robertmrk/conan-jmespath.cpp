@@ -1,4 +1,5 @@
 import os
+import os.path
 
 from conans import ConanFile, CMake, tools
 
@@ -13,7 +14,7 @@ class JmespathCppConan(ConanFile):
     description = "C++ implementation of JMESPath, a query language for JSON"
     topics = ("<Put some tag here>", "<here>", "<and here>")
     settings = "os", "compiler", "build_type", "arch"
-    generators = "cmake"
+    generators = "cmake_paths"
 
     exports_sources = ["CMakeLists.txt"]
 
@@ -30,6 +31,10 @@ class JmespathCppConan(ConanFile):
         os.rename("jmespath.cpp", self._source_subfolder)
 
     def configure_cmake(self):
+        if not os.path.exists(self._build_subfolder):
+            os.mkdir(self._build_subfolder)
+        if os.path.exists("conan_paths.cmake"):
+            os.rename("conan_paths.cmake", os.path.join(self._build_subfolder, "conan_paths.cmake"))
         cmake = CMake(self)
         cmake.definitions["JMESPATH_BUILD_TESTS"] = False
         cmake.configure(source_folder=self._source_subfolder,
