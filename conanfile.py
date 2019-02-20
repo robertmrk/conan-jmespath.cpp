@@ -7,16 +7,15 @@ from conans import ConanFile, CMake, tools
 class JmespathCppConan(ConanFile):
     name = "jmespath.cpp"
     version = "0.2.0"
-    license = "MIT"
-    author = "Robert Marki <gsmiko@gmail.com>"
-    url = "https://github.com/robertmrk/conan-jmespath.cpp"
-    repo_url = "https://github.com/robertmrk/jmespath.cpp"
     description = "C++ implementation of JMESPath, a query language for JSON"
-    topics = ("<Put some tag here>", "<here>", "<and here>")
-    settings = "os", "compiler", "build_type", "arch"
+    homepage = "https://github.com/robertmrk/jmespath.cpp"
+    url = "https://github.com/robertmrk/conan-jmespath.cpp"
+    license = "MIT"
+    author = "Robert Marki (gsmiko@gmail.com>)"
+    topics = ("jmespath", "json")
+    settings = "os", "compiler", "build_type", "arch"    
     generators = ("cmake", "cmake_paths")
     default_options = "boost:header_only=True"
-
     exports_sources = ["CMakeLists.txt"]
 
     _source_subfolder = "source_subfolder"
