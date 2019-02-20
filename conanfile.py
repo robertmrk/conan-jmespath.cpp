@@ -15,6 +15,7 @@ class JmespathCppConan(ConanFile):
     topics = ("<Put some tag here>", "<here>", "<and here>")
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake_paths"
+    default_options = "boost:header_only=True"
 
     exports_sources = ["CMakeLists.txt"]
 
