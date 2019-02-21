@@ -45,6 +45,7 @@ class JmespathCppConan(ConanFile):
         cmake.build()
 
     def package(self):
+        self.copy("LICENSE", src=self._source_subfolder, dst="licenses")
         cmake = self.configure_cmake()
         cmake.install()
 
