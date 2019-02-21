@@ -29,7 +29,7 @@ class JmespathCppConan(ConanFile):
 
     def source(self):
         self.run("git clone https://github.com/robertmrk/jmespath.cpp.git")
-        self.run("cd jmespath.cpp && git checkout release/0.2.0 && cd ..")
+        self.run("cd jmespath.cpp && git checkout 0.2.0 && cd ..")
         os.rename("jmespath.cpp", self._source_subfolder)
 
     def configure_cmake(self):
