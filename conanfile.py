@@ -2,6 +2,8 @@ import os
 import os.path
 
 from conans import ConanFile, CMake, tools
+from conans.model.version import Version
+from conans.errors import ConanInvalidConfiguration
 
 
 class JmespathCppConan(ConanFile):
@@ -31,6 +33,16 @@ class JmespathCppConan(ConanFile):
         os.rename("jmespath.cpp", self._source_subfolder)
 
     def configure_cmake(self):
+        compiler_version = Version(self.settings.compiler.version.value)
+        if self.settings.compiler == "Visual Studio" and compiler_version < "15":
+            raise ConanInvalidConfiguration("jmespath.cpp requires Visual Studio 2017 or higher")
+        if self.settings.compiler == "gcc" and compiler_version < "6.0":
+            raise ConanInvalidConfiguration("jmespath.cpp requires gcc 6.0 or higher")
+        if self.settings.compiler == "clang" and compiler_version < "4.0":
+            raise ConanInvalidConfiguration("jmespath.cpp requires clang 4.0 or higher")
+        if self.settings.compiler == "apple-clang" and compiler_version < "9.0":
+            raise ConanInvalidConfiguration("jmespath.cpp requires apple-clang 9.0 or higher")
+
         if not os.path.exists(self._build_subfolder):
             os.mkdir(self._build_subfolder)
         if os.path.exists("conan_paths.cmake"):
