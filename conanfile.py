@@ -13,7 +13,7 @@ class JmespathCppConan(ConanFile):
     homepage = "https://github.com/robertmrk/jmespath.cpp"
     url = "https://github.com/robertmrk/conan-jmespath.cpp"
     license = "MIT"
-    author = "Robert Marki (gsmiko@gmail.com>)"
+    author = "Robert Marki (gsmiko@gmail.com)"
     topics = ("jmespath", "json")
     settings = "os", "compiler", "build_type", "arch"    
     generators = ("cmake", "cmake_paths")
@@ -43,10 +43,6 @@ class JmespathCppConan(ConanFile):
         if self.settings.compiler == "apple-clang" and compiler_version < "9.0":
             raise ConanInvalidConfiguration("jmespath.cpp requires apple-clang 9.0 or higher")
 
-        if not os.path.exists(self._build_subfolder):
-            os.mkdir(self._build_subfolder)
-        if os.path.exists("conan_paths.cmake"):
-            os.rename("conan_paths.cmake", os.path.join(self._build_subfolder, "conan_paths.cmake"))
         cmake = CMake(self)
         cmake.definitions["JMESPATH_BUILD_TESTS"] = False
         cmake.configure(build_folder=self._build_subfolder)

@@ -4,6 +4,6 @@ project(cmake_wrapper)
 include(conanbuildinfo.cmake)
 conan_basic_setup()
 
-include("${CMAKE_CURRENT_BINARY_DIR}/conan_paths.cmake")
+include(conan_paths.cmake)
 
 add_subdirectory("source_subfolder")
