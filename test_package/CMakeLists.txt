@@ -4,7 +4,7 @@ project(example)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-find_package(jmespath 0.1.0 REQUIRED)
+find_package(jmespath 0.2.0 REQUIRED)
 
 add_executable(${PROJECT_NAME} example.cpp)
 target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
