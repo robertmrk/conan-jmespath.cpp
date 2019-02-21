@@ -1,7 +1,8 @@
 ## Conan package recipe for [*jmespath.cpp*](https://github.com/robertmrk/jmespath.cpp)
 [![Download](https://api.bintray.com/packages/robertmrk/conan/jmespath.cpp%3Arobertmrk/images/download.svg) ](https://bintray.com/robertmrk/conan/jmespath.cpp%3Arobertmrk/_latestVersion)
 [![Build Status Travis](https://api.travis-ci.org/robertmrk/conan-jmespath.cpp.svg)](https://travis-ci.org/robertmrk/conan-jmespath.cpp)
-[![Build Status AppVeyor](https://ci.appveyor.com/api/projects/status/wtchojaiohn3f6nt?svg=true)](https://ci.appveyor.com/prhttps://api.travis-ci.org/robertmrk/conan-jmespath.cpp.svg?branch=testing%2F0.2.0oject/robertmrk/conan-jmespath-cpp)
+[![Build status AppVeyor](https://ci.appveyor.com/api/projects/status/wtchojaiohn3f6nt?svg=true)](https://ci.appveyor.com/project/robertmrk/conan-jmespath-cpp)
+
 
 jmespath.cpp is a C++ implementation of [JMESPath](http://jmespath.org/), a query language for JSON. It can be used to extract and transform elements of a JSON document.
 
