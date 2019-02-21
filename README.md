@@ -15,13 +15,13 @@ If you wish to report an issue or make a request for a package, please do so her
 ## For Users
 
 ### Basic setup
-    $ conan install jmespath.cpp/0.2.0@robertmrk/testing
+    $ conan install jmespath.cpp/0.2.0@robertmrk/stable
 
 ### Project setup
 If you handle multiple dependencies in your project is better to add a *conanfile.txt*
 
     [requires]
-    jmespath.cpp/0.2.0@robertmrk/testing
+    jmespath.cpp/0.2.0@robertmrk/stable
 
     [generators]
     cmake
