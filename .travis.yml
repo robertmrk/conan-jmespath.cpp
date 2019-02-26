@@ -1,7 +1,7 @@
 
 env:
    global:
-     - CONAN_REFERENCE: "jmespath.cpp/0.2.0"
+     - CONAN_REFERENCE: "jmespath.cpp/0.2.1"
      - CONAN_USERNAME: "robertmrk"
      - CONAN_LOGIN_USERNAME: "robertmrk"
      - CONAN_CHANNEL: "stable"
