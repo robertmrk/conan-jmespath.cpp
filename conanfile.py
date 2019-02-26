@@ -8,7 +8,7 @@ from conans.errors import ConanInvalidConfiguration
 
 class JmespathCppConan(ConanFile):
     name = "jmespath.cpp"
-    version = "0.2.0"
+    version = "0.2.1"
     description = "C++ implementation of JMESPath, a query language for JSON"
     homepage = "https://github.com/robertmrk/jmespath.cpp"
     url = "https://github.com/robertmrk/conan-jmespath.cpp"
@@ -30,7 +30,7 @@ class JmespathCppConan(ConanFile):
 
     def source(self):
         self.run("git clone https://github.com/robertmrk/jmespath.cpp.git")
-        self.run("cd jmespath.cpp && git checkout 0.2.0 && cd ..")
+        self.run("cd jmespath.cpp && git checkout 0.2.1 && cd ..")
         os.rename("jmespath.cpp", self._source_subfolder)
 
     def configure_cmake(self):
