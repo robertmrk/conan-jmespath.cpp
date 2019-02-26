@@ -18,6 +18,7 @@ class JmespathCppConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"    
     generators = ("cmake", "cmake_paths")
     default_options = "boost:header_only=True"
+    exports = "LICENSE"
     exports_sources = ["CMakeLists.txt"]
 
     _source_subfolder = "source_subfolder"
